@@ -1,3 +1,10 @@
 build/
 *.pyc
 .*.swp
+**/*.fc
+**/*.dat
+**/*.vtp
+**/*.xyz
+**/*.vel
+.vscode/*
+**/*.Identifier

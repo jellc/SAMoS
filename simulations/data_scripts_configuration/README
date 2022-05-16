@@ -1,0 +1,31 @@
+
+SAMoS configuration and input files are included so that all simulations that are used to 
+generate data for Figures 6-11 can be reproduced. Additionally, the scripts used to run 
+a set of simulations, then analyse and plot the results, as is done for Figure 7, are included.
+Please note that, unlike the SAMoS package, these scripts are not intended to run 'out of the box'
+and should instead be used as a reference. A number of more general analysis
+tools can be found included in the SAMoS package. For a detailed description of 
+how to write a SAMoS configuration file please refer to the SAMoS documentation.
+
+The SAMoS package is freely available at https://github.com/sknepneklab/SAMoS
+
+The contents are organised as follows,
+
+Figure06
+The data and configuration files for Figure 6 and supplementary movies S1-S7
+
+Figure07
+Data and configuration files and scripts for running, plotting and analysing the phase 
+diagram in Figure 7.
+
+Figure08
+Data and configuration files for Figure 8, and supplementary movie S8
+
+Figure09
+Data and configuration files for Figure 9, and supplementary movie S9
+
+Figure10
+Data and configuration files for Figure 10, and supplementary movies S10-S13
+
+Figure11
+Data and configuration files for Figure 11, and supplementary movies S14-S16

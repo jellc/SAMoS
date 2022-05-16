@@ -1,0 +1,105 @@
+{
+    "system": {
+        "input_file": "sphere.dat",
+        "n_particles": "800",
+        "n_types": "1"
+    },
+    "nlist": {
+        "cut": "2.3999999999999999",
+        "pad": "0.5",
+        "build_type": "cell",
+        "max_perimeter": "20.0",
+        "circumcenter": "false"
+    },
+    "dump": {
+        "sphere": {
+            "type": "full",
+            "directory": ".",
+            "extension": "dat",
+            "start": "0",
+            "freq": "1000",
+            "compress": "false",
+            "group": "all",
+            "keys": "true",
+            "quantity": "id",
+            "quantity": "radius",
+            "quantity": "coordinate",
+            "quantity": "velocity",
+            "quantity": "director",
+            "group": "all"
+        }
+    },
+    "constraint": {
+        "max_iter": "100",
+        "tol": "9.9999999999999995e-07",
+        "group": "all",
+        "sphere": {
+            "r": "10"
+        }
+    },
+    "value": {
+        "constant": {
+            "val": "0",
+            "steps": "1000"
+        }
+    },
+    "potential": {
+        "pair": {
+            "soft": {
+                "k": "10",
+                "a": "1"
+            }
+        },
+        "external": {
+            "self_propulsion": {
+                "alpha": "1"
+            }
+        }
+    },
+    "aligner": {
+        "pair": {
+            "polar": {
+                "J": "1",
+                "rcut": "2.3999999999999999"
+            }
+        }
+    },
+    "logger": {
+        "sphere": {
+            "log": {
+                "file_name": "sphere.log",
+                "freq": "100",
+                "quantity": "polar_align",
+                "quantity": "soft_energy",
+                "quantity": "velocity"
+            }
+        }
+    },
+    "integrator": {
+        "dt": "0.01",
+        "group": "all",
+        "nve": {
+            "limit": "0.0001"
+        },
+        "brownian_pos": {
+            "mu": "1",
+            "seed": "0"
+        },
+        "brownian_align": {
+            "nu": "0.01",
+            "mur": "1",
+            "seed": "0"
+        }
+    },
+    "run": {
+        "nve_all": {
+            "steps": "10000"
+        },
+        "brownian_align_all": {
+            "steps": "100000"
+        },
+        "brownian_pos_all": {
+            "steps": "100000"
+        }
+    }
+}

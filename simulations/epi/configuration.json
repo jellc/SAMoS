@@ -1,0 +1,146 @@
+{
+    "system": {
+        "input_file": "out.dat",
+        "n_particles": "1149",
+        "n_types": "2",
+        "bound_neigh_file": "out.boundary",
+        "group": {
+            "name": "g1",
+            "name": "g2"
+        }
+    },
+    "nlist": {
+        "cut": "2.3999999999999999",
+        "pad": "0.5",
+        "build_type": "cell",
+        "triangulation": "true",
+        "max_perimeter": "30.0",
+        "circumcenter": "false"
+    },
+    "constraint": {
+        "max_iter": "100",
+        "tol": "9.9999999999999995e-07",
+        "group": "all",
+        "plane": {
+            "lx": "100",
+            "ly": "100",
+            "zpos": "0"
+        }
+    },
+    "value": {
+        "constant": {
+            "val": "0",
+            "steps": "1000"
+        }
+    },
+    "potential": {
+        "pair": {
+            "vertex_particle": {
+                "K": "1",
+                "gamma": "0.10000000000000001",
+                "lambda": "-0.59999999999999998",
+                "mesh_update_steps": "0",
+                "include_boundary": "false"
+            },
+            "line_tension": {
+                "lambda": "0.10000000000000001",
+                "l0": "0"
+            },
+            "boundary_bending": {
+                "kappa": "0.5",
+                "theta0": "3.1415926535897931"
+            },
+            "soft": {
+                "k": "10",
+                "a": "1",
+                "type_1_and_type_2": {
+                    "push": "10",
+                    "a": "2"
+                }
+            }
+        },
+        "external": {
+            "self_propulsion": {
+                "alpha": "0.029999999999999999"
+            }
+        }
+    },
+    "aligner": {
+        "external": {
+            "ajpolar": {
+                "normalise": "true",
+                "tau": "1"
+            }
+        }
+    },
+    "logger": {
+        "cell": {
+            "log": {
+                "file_name": "cell.log",
+                "freq": "100",
+                "quantity": "area",
+                "quantity": "avg_perim",
+                "quantity": "size",
+                "quantity": "vp_energy"
+            }
+        }
+    },
+    "dump": {
+        "cell": {
+            "type": "full",
+            "directory": ".",
+            "extension": "dat",
+            "start": "0",
+            "freq": "200",
+            "compress": "false",
+            "include_mesh": "true",
+            "group": "all",
+            "keys": "true",
+            "quantity": "id",
+            "quantity": "tp",
+            "quantity": "coordinate",
+            "quantity": "velocity",
+            "quantity": "force",
+            "quantity": "director",
+            "quantity": "cell_area",
+            "quantity": "cell_perim",
+            "quantity": "boundary",
+            "group": "all"
+        },
+        "cell_dual": {
+            "type": "vtp",
+            "directory": ".",
+            "extension": "vtp",
+            "start": "0",
+            "freq": "200",
+            "compress": "false",
+            "dual": "true",
+            "group": "all"
+        },
+        "faces": {
+            "type": "face",
+            "directory": ".",
+            "extension": "fc",
+            "start": "0",
+            "freq": "200",
+            "compress": "false",
+            "group": "all"
+        }
+    },
+    "integrator": {
+        "dt": "0.025000000000000001",
+        "group": "internal",
+        "brownian": {
+            "v0": "0",
+            "nu": "0.01",
+            "mu": "1",
+            "mur": "1",
+            "seed": "1"
+        }
+    },
+    "run": {
+        "brownian_internal": {
+            "steps": "100000"
+        }
+    }
+}
